@@ -4,7 +4,19 @@ from . import parse_args
 
 class TestArgs(unittest.TestCase):
     def test_giving_args(self):
-        args = parse_args(["--input", "test.csv", "--headers", "c1", "c2", "--heat-size", "3", "--rounds", "5"])
+        args = parse_args(
+            [
+                "--input",
+                "test.csv",
+                "--headers",
+                "c1",
+                "c2",
+                "--heat-size",
+                "3",
+                "--rounds",
+                "5",
+            ]
+        )
         self.assertEqual(args.input, "test.csv")
         self.assertEqual(args.headers, ["c1", "c2"])
         self.assertEqual(args.heat_size, 3)
